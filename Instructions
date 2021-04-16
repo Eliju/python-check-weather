@@ -1,0 +1,6 @@
+To build the exe:
+Install pyinstaller in PyCharm Terminal
+Run the following command:
+pyinstaller --hidden-import jproperties --onefile --clean --name CheckWeather main.py
+
+Make sure configuration files are also in the folder where you run the CheckWeather.exe

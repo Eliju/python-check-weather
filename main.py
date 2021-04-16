@@ -1,12 +1,10 @@
 from __future__ import print_function
 import requests
 from jproperties import Properties
-import json
 
 import time
 import generic_camunda_client
 from generic_camunda_client.rest import ApiException
-from pprint import pprint
 
 
 def get_weather(city):
@@ -64,7 +62,6 @@ def run_get_weather():
         api_instance = generic_camunda_client.ExternalTaskApi(api_client)
 
         try:
-            # api_response = api_instance.evaluate_condition(evaluation_condition_dto=evaluation_condition_dto)
             api_response = api_instance.fetch_and_lock(fetch_external_tasks_dto=fetch_and_lock_payload)
             while not api_response:
                 time.sleep(5)
